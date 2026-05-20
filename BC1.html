@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BC1 - Administrer - Tristan Zaccaro</title>
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-color: #1FBB9C;
+      --bg-gray: #f2f2f2;
+      --hover-gray: #e8e8e8;
+    }
+    
+    body { 
+      font-family: "Open Sans", sans-serif; 
+      background-color: #fff; 
+      line-height: 1.7; 
+      color: #444;
+    }
+
+    /* --- BOUTON RETOUR ANIMÉ (STYLE PILULE) --- */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin: 30px 0;
+      padding: 12px 25px;
+      color: #fff !important;
+      background-color: var(--accent-color);
+      text-decoration: none !important;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 15px rgba(31, 187, 156, 0.3);
+      border: none;
+    }
+
+    .back-link i { 
+      margin-right: 10px; 
+      font-size: 1.2rem;
+      transition: transform 0.3s ease; 
+    }
+
+    .back-link:hover { 
+      transform: scale(1.08); 
+      box-shadow: 0 6px 20px rgba(31, 187, 156, 0.5); 
+      background-color: #16a085; 
+    }
+
+    .back-link:hover i { 
+      transform: translateX(-5px); 
+    }
+
+    /* --- TITRE DE LA PAGE --- */
+    .bc-header-container { 
+      text-align: center; 
+      margin-bottom: 60px; 
+    }
+    .bc-header-container h1 { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      position: relative; 
+      padding-bottom: 15px; 
+      text-transform: uppercase; 
+      display: inline-block; 
+      color: #2c3e50; 
+    }
+    .bc-header-container h1::after { 
+      content: ''; 
+      position: absolute; 
+      width: 60%; 
+      height: 4px; 
+      bottom: 0; 
+      left: 50%; 
+      background-color: var(--accent-color); 
+      transform: translateX(-50%); 
+    }
+
+    /* --- CARTES AC ACCORDÉON --- */
+    .ac-card {
+      background-color: var(--bg-gray);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      overflow: hidden;
+      max-height: 120px; 
+      border-left: 8px solid var(--accent-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .ac-card:hover { 
+      background-color: var(--hover-gray); 
+      max-height: 2000px; /* S'ouvre au survol */
+      transform: translateY(-5px); 
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+    }
+    
+    .ac-card h4 { 
+      font-size: 1.25rem; 
+      font-weight: 700; 
+      margin: 0; 
+      color: #333; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+
+    .ac-card i.toggle-icon { 
+      color: var(--accent-color); 
+      font-size: 1.5rem;
+      transition: transform 0.5s; 
+    }
+
+    .ac-card:hover i.toggle-icon { 
+      transform: rotate(180deg); 
+    }
+
+    /* --- CONTENU DÉTAILLÉ --- */
+    .ac-content { 
+      opacity: 0; 
+      margin-top: 30px; 
+      padding-top: 20px; 
+      border-top: 1px solid #ccc; 
+      transition: opacity 0.6s ease; 
+    }
+
+    .ac-card:hover .ac-content { 
+      opacity: 1; 
+    }
+
+    .question-block { margin-bottom: 25px; }
+    
+    .question-title { 
+      color: var(--accent-color); 
+      font-weight: 800; 
+      display: block; 
+      margin-bottom: 8px; 
+      text-transform: uppercase; 
+      font-size: 0.9rem; 
+      letter-spacing: 1px; 
+    }
+
+    .ac-content p {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 0;
+    }
+    
+    /* BLOC DE CODE / TRACE */
+    .trace-box { 
+      background: #1e1e1e; 
+      color: #f8f8f2; 
+      padding: 20px; 
+      border-radius: 8px; 
+      font-family: 'Consolas', 'Monaco', monospace; 
+      font-size: 0.95rem; 
+      margin: 15px 0; 
+      border-left: 4px solid var(--accent-color); 
+      line-height: 1.5; 
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <a href="resume.html" class="back-link">
+      <i class="bi bi-arrow-left-circle-fill"></i> Retour au Portfolio
+    </a>
+    
+    <div class="bc-header-container" data-aos="fade-up">
+      <h1>Administrer les systèmes</h1>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC11.01 | Maîtriser les lois fondamentales de l’électricité <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Réalisation de manipulations en laboratoire sur des circuits en courant continu (CC) et alternatif (CA). Mesure de tension, intensité et résistance sur montages série et parallèle.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Indispensable pour comprendre la distribution d'énergie, calculer la consommation d'une baie de brassage et choisir les onduleurs adaptés.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Utilisation de multimètres et oscilloscopes pour vérifier les lois de Kirchhoff et analyser le rendement énergétique.</p>
+            </div>
+            <div class="question-block"><span class="question-title">Mes difficultés</span><p>Comprendre le déphasage dans les circuits inductifs.</p></div>
+            <div class="question-block"><span class="question-title">Ce que j’en ai appris</span><p>L'importance du dimensionnement des câbles pour la sécurité (effet Joule).</p></div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC11.02 | Architecture des systèmes numériques <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Étude du codage de l'information (binaire, hexadécimal) et analyse de l'encapsulation des données via le modèle OSI.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Analyse de captures de trames avec Wireshark pour visualiser l'empilement des protocoles.</p>
+              <div class="trace-box">Frame 1: 74 bytes on wire (592 bits)<br>Ethernet II, Src: Apple_f2:31, Dst: Cisco_a1:04<br>Internet Protocol Version 4, Src: 192.168.1.10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC11.03 | Configurer les fonctions de base du réseau local <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Configuration de commutateurs Cisco : création de VLANs, sécurisation des ports et mise en place de trunks 802.1Q.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Ligne de commande (CLI) via port console.</p>
+              <div class="trace-box">Switch(config)# vlan 10<br>Switch(config-vlan)# name DATA_VLAN<br>Switch(config)# interface range fa0/1-5<br>Switch(config-if-range)# switchport access vlan 10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC11.04 | Maîtriser les principes fondamentaux des OS <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Installation et administration de serveurs Linux (Debian) et Windows Server. Gestion des droits et des permissions.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Manipulation des fichiers de configuration et gestion des utilisateurs en Bash.</p>
+              <div class="trace-box"># useradd -m -G sudo tristan<br># chmod 750 /home/tristan<br># ls -l /etc/shadow</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC11.05 | Identifier les dysfonctionnements du réseau local <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Dépannage de pannes réseau sur maquettes physiques. Diagnostic par étapes (Modèle OSI).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Utilisation d'outils comme Ping, Traceroute et Nslookup pour isoler le point de rupture.</p>
+              <div class="trace-box">C:\> ping 8.8.8.8 -t<br>Délai d'attente de la demande dépassé.<br>C:\> ipconfig /all</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC11.06 | Installer un poste client et expliquer la procédure <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Préparation de masters, installation d'OS et rédaction de documentations techniques pour les utilisateurs finaux.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>La standardisation du parc informatique facilite grandement la maintenance et réduit les tickets de support.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  </script>
+</body>
+</html>

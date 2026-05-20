@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BC3 - Programmer - Tristan Zaccaro</title>
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-color: #1FBB9C;
+      --bg-gray: #f2f2f2;
+      --hover-gray: #e8e8e8;
+    }
+    
+    body { 
+      font-family: "Open Sans", sans-serif; 
+      background-color: #fff; 
+      line-height: 1.7; 
+      color: #444;
+    }
+
+    /* --- BOUTON RETOUR ANIMÉ (STYLE PILULE) --- */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin: 30px 0;
+      padding: 12px 25px;
+      color: #fff !important;
+      background-color: var(--accent-color);
+      text-decoration: none !important;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 15px rgba(31, 187, 156, 0.3);
+      border: none;
+    }
+
+    .back-link i { 
+      margin-right: 10px; 
+      font-size: 1.2rem;
+      transition: transform 0.3s ease; 
+    }
+
+    .back-link:hover { 
+      transform: scale(1.08); 
+      box-shadow: 0 6px 20px rgba(31, 187, 156, 0.5); 
+      background-color: #16a085; 
+    }
+
+    .back-link:hover i { 
+      transform: translateX(-5px); 
+    }
+
+    /* --- TITRE DE LA PAGE --- */
+    .bc-header-container { 
+      text-align: center; 
+      margin-bottom: 60px; 
+    }
+    .bc-header-container h1 { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      position: relative; 
+      padding-bottom: 15px; 
+      text-transform: uppercase; 
+      display: inline-block; 
+      color: #2c3e50; 
+    }
+    .bc-header-container h1::after { 
+      content: ''; 
+      position: absolute; 
+      width: 60%; 
+      height: 4px; 
+      bottom: 0; 
+      left: 50%; 
+      background-color: var(--accent-color); 
+      transform: translateX(-50%); 
+    }
+
+    /* --- CARTES AC ACCORDÉON --- */
+    .ac-card {
+      background-color: var(--bg-gray);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      overflow: hidden;
+      max-height: 120px; 
+      border-left: 8px solid var(--accent-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .ac-card:hover { 
+      background-color: var(--hover-gray); 
+      max-height: 2000px; 
+      transform: translateY(-5px); 
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+    }
+    
+    .ac-card h4 { 
+      font-size: 1.25rem; 
+      font-weight: 700; 
+      margin: 0; 
+      color: #333; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+
+    .ac-card i.toggle-icon { 
+      color: var(--accent-color); 
+      font-size: 1.5rem;
+      transition: transform 0.5s; 
+    }
+
+    .ac-card:hover i.toggle-icon { 
+      transform: rotate(180deg); 
+    }
+
+    /* --- CONTENU DÉTAILLÉ --- */
+    .ac-content { 
+      opacity: 0; 
+      margin-top: 30px; 
+      padding-top: 20px; 
+      border-top: 1px solid #ccc; 
+      transition: opacity 0.6s ease; 
+    }
+
+    .ac-card:hover .ac-content { 
+      opacity: 1; 
+    }
+
+    .question-block { margin-bottom: 25px; }
+    
+    .question-title { 
+      color: var(--accent-color); 
+      font-weight: 800; 
+      display: block; 
+      margin-bottom: 8px; 
+      text-transform: uppercase; 
+      font-size: 0.9rem; 
+      letter-spacing: 1px; 
+    }
+
+    .ac-content p {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 0;
+    }
+    
+    .trace-box { 
+      background: #1e1e1e; 
+      color: #f8f8f2; 
+      padding: 20px; 
+      border-radius: 8px; 
+      font-family: 'Consolas', monospace; 
+      font-size: 0.95rem; 
+      margin: 15px 0; 
+      border-left: 4px solid var(--accent-color); 
+      line-height: 1.5; 
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <a href="resume.html" class="back-link">
+      <i class="bi bi-arrow-left-circle-fill"></i> Retour au Portfolio
+    </a>
+    
+    <div class="bc-header-container" data-aos="fade-up">
+      <h1>Programmer les services</h1>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.01 | Utiliser un système informatique et ses outils <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Apprentissage intensif du terminal Linux et de la gestion de fichiers en ligne de commande. Utilisation d'éditeurs de texte avancés (VS Code, Vim).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Automatisation de tâches répétitives via des scripts Shell et gestion des droits utilisateurs.</p>
+              <div class="trace-box">$ grep "ERROR" /var/log/syslog | tail -n 5<br>$ chmod +x myscript.sh<br>$ ./myscript.sh --auto</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.02 | Lire, exécuter et modifier un programme <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Savoir déboguer du code écrit par un tiers est crucial pour maintenir des scripts d'administration réseau ou des outils de monitoring.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Analyse de scripts Python pour corriger des erreurs de syntaxe ou de logique.</p>
+              <div class="trace-box">def connect_test(ip):<br>&nbsp;&nbsp;&nbsp;&nbsp;try:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ping(ip)<br>&nbsp;&nbsp;&nbsp;&nbsp;except Exception as e:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Erreur: {e}")</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.03 | Traduire un algorithme dans un langage <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Conception de solutions algorithmiques pour résoudre des problèmes de tri ou de recherche, puis implémentation en langage Python.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>La structuration de la pensée est plus importante que la syntaxe pure. Un bon algorithme est la base d'un programme performant.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.04 | Architecture et technologies Web <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Développement de pages Web dynamiques utilisant HTML, CSS et des interactions côté serveur pour gérer des interfaces d'administration.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Mise en place d'un serveur local pour tester les formulaires et le rendu responsive.</p>
+              <div class="trace-box">&lt;nav class="navbar"&gt;<br>&nbsp;&nbsp;&lt;a href="#"&gt;Accueil&lt;/a&gt;<br>&nbsp;&nbsp;&lt;button class="btn-green"&gt;Connexion&lt;/button&gt;<br>&lt;/nav&gt;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.05 | Gestion des données <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Conception et manipulation de bases de données relationnelles pour stocker des inventaires réseaux ou des logs d'utilisateurs.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Rédaction de requêtes SQL pour extraire des informations précises (SELECT, JOIN, WHERE).</p>
+              <div class="trace-box">SELECT hostname, ip FROM switchs<br>WHERE model = 'Cisco' AND vlan_id = 10;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.06 | Travail collaboratif (Git) <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Utilisation de Git pour gérer l'historique de mes projets et travailler en équipe sans écraser le travail de mes collaborateurs.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Gestion des branches, des commits et résolution de conflits lors des fusions (merges).</p>
+              <div class="trace-box">$ git add .<br>$ git commit -m "Ajout du bouton animé"<br>$ git push origin main</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  </script>
+</body>
+</html>

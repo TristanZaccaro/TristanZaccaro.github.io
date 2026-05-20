@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BC2 - Connecter - Tristan Zaccaro</title>
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-color: #1FBB9C;
+      --bg-gray: #f2f2f2;
+      --hover-gray: #e8e8e8;
+    }
+    
+    body { 
+      font-family: "Open Sans", sans-serif; 
+      background-color: #fff; 
+      line-height: 1.7; 
+      color: #444;
+    }
+
+    /* --- BOUTON RETOUR ANIMÉ (STYLE PILULE) --- */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin: 30px 0;
+      padding: 12px 25px;
+      color: #fff !important;
+      background-color: var(--accent-color);
+      text-decoration: none !important;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 15px rgba(31, 187, 156, 0.3);
+      border: none;
+    }
+
+    .back-link i { 
+      margin-right: 10px; 
+      font-size: 1.2rem;
+      transition: transform 0.3s ease; 
+    }
+
+    .back-link:hover { 
+      transform: scale(1.08); 
+      box-shadow: 0 6px 20px rgba(31, 187, 156, 0.5); 
+      background-color: #16a085; 
+    }
+
+    .back-link:hover i { 
+      transform: translateX(-5px); 
+    }
+
+    /* --- TITRE DE LA PAGE --- */
+    .bc-header-container { 
+      text-align: center; 
+      margin-bottom: 60px; 
+    }
+    .bc-header-container h1 { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      position: relative; 
+      padding-bottom: 15px; 
+      text-transform: uppercase; 
+      display: inline-block; 
+      color: #2c3e50; 
+    }
+    .bc-header-container h1::after { 
+      content: ''; 
+      position: absolute; 
+      width: 60%; 
+      height: 4px; 
+      bottom: 0; 
+      left: 50%; 
+      background-color: var(--accent-color); 
+      transform: translateX(-50%); 
+    }
+
+    /* --- CARTES AC ACCORDÉON --- */
+    .ac-card {
+      background-color: var(--bg-gray);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      overflow: hidden;
+      max-height: 120px; 
+      border-left: 8px solid var(--accent-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .ac-card:hover { 
+      background-color: var(--hover-gray); 
+      max-height: 2000px; 
+      transform: translateY(-5px); 
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+    }
+    
+    .ac-card h4 { 
+      font-size: 1.25rem; 
+      font-weight: 700; 
+      margin: 0; 
+      color: #333; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+
+    .ac-card i.toggle-icon { 
+      color: var(--accent-color); 
+      font-size: 1.5rem;
+      transition: transform 0.5s; 
+    }
+
+    .ac-card:hover i.toggle-icon { 
+      transform: rotate(180deg); 
+    }
+
+    /* --- CONTENU DÉTAILLÉ --- */
+    .ac-content { 
+      opacity: 0; 
+      margin-top: 30px; 
+      padding-top: 20px; 
+      border-top: 1px solid #ccc; 
+      transition: opacity 0.6s ease; 
+    }
+
+    .ac-card:hover .ac-content { 
+      opacity: 1; 
+    }
+
+    .question-block { margin-bottom: 25px; }
+    
+    .question-title { 
+      color: var(--accent-color); 
+      font-weight: 800; 
+      display: block; 
+      margin-bottom: 8px; 
+      text-transform: uppercase; 
+      font-size: 0.9rem; 
+      letter-spacing: 1px; 
+    }
+
+    .ac-content p {
+      font-size: 1.1rem;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 0;
+    }
+    
+    .trace-box { 
+      background: #1e1e1e; 
+      color: #f8f8f2; 
+      padding: 20px; 
+      border-radius: 8px; 
+      font-family: 'Consolas', monospace; 
+      font-size: 0.95rem; 
+      margin: 15px 0; 
+      border-left: 4px solid var(--accent-color); 
+      line-height: 1.5; 
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <a href="resume.html" class="back-link">
+      <i class="bi bi-arrow-left-circle-fill"></i> Retour au Portfolio
+    </a>
+    
+    <div class="bc-header-container" data-aos="fade-up">
+      <h1>Connecter les entreprises</h1>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC12.01 | Mesurer, analyser et commenter les signaux <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>J'ai utilisé des équipements de mesure professionnels pour analyser des signaux analogiques et numériques, en observant leur comportement dans les domaines temporel et fréquentiel.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Manipulation d'un analyseur de spectre pour mesurer la puissance des harmoniques et d'un oscilloscope pour valider la qualité du signal (RS232, MLI).</p>
+              <div class="trace-box">Spectrum Analyzer: Center 2.44 GHz<br>RBW: 100 kHz | VBW: 300 kHz<br>Peak Power: -12.4 dBm</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC12.02 | Caractériser des systèmes de transmissions élémentaires <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour prédire la fiabilité d'une liaison sans fil ou filaire et s'assurer que le rapport signal sur bruit (SNR) est suffisant pour le débit souhaité.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Calculs de bilans de liaison en utilisant les échelles logarithmiques (dB, dBm, dBi).</p>
+              <div class="trace-box">Prx = Ptx + Gtx + Grx - Losses<br>Exemple: 20dBm + 3dBi + 3dBi - 110dB = -84dBm (Seuil de sensibilité)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC12.03 | Déployer des supports de transmission <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Soudure de fibre optique, confection de câbles RJ45 (normes T568A/B) et déploiement de bornes Wi-Fi avec étude de couverture.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Utilisation d'une soudeuse à arc et d'un réflectomètre (OTDR) pour qualifier la liaison.</p>
+              <div class="trace-box">OTDR Event Table:<br>Event 1: Splice @ 1.2km | Loss: 0.03dB<br>Event 2: Connector @ 2.5km | Reflectance: -45dB</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC12.04 | Connecter les systèmes de ToIP <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Installation et configuration de serveurs de téléphonie IP. Gestion des comptes utilisateurs et des flux audio.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Configuration de serveurs Asterisk et debug des messages SIP avec l'outil sngrep.</p>
+              <div class="trace-box">REGISTER sip:asterisk@172.16.0.10 SIP/2.0<br>WWW-Authenticate: Digest realm="asterisk"<br>Status: 200 OK</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC12.05 | Communiquer avec un tiers et adapter son discours <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>L'importance de savoir vulgariser une solution complexe pour un décideur tout en restant extrêmement précis techniquement face à un expert.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que je ferais autrement</span>
+              <p>Pratiquer davantage la rédaction de fiches de synthèse "décideur" pour accélérer la validation des projets.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio - Zaccaro Tristan</title>
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-color: #1FBB9C; 
+    }
+
+    /* --- STYLE DU CONTENU (REPRIS DE TON CODE VALIDE) --- */
+    .competence-block { margin-bottom: 80px; }
+
+    .resume-title-link {
+      text-decoration: none !important;
+      color: #2c3e50 !important;
+      display: inline-block;
+      transition: all 0.4s ease;
+      margin-bottom: 40px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .resume-title-link h3 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .resume-title-link:hover h3 { color: var(--accent-color) !important; }
+
+    .resume-title-link h3::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 50%;
+      background-color: var(--accent-color);
+      transition: all 0.4s ease;
+      transform: translateX(-50%);
+    }
+
+    .resume-title-link:hover h3::after { width: 70%; }
+
+    .ac-wrapper {
+      position: relative;
+      padding-left: 50px;
+      text-align: left;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .ac-wrapper::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 25px;
+      bottom: 5px;
+      width: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    .ac-wrapper::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -5px;
+      width: 26px;
+      height: 26px;
+      border: 4px solid var(--accent-color);
+      border-radius: 50%;
+      background-color: #fff;
+    }
+
+    .ac-list { list-style: none; padding: 0; margin: 0; }
+    .ac-list li {
+      margin-bottom: 18px;
+      color: #444;
+      line-height: 1.5;
+      font-size: 1.15rem; 
+    }
+
+    .ac-list strong { color: var(--accent-color); font-weight: 700; }
+    .row-center-bottom { display: flex; justify-content: center; }
+  </style>
+</head>
+
+<body class="resume-page">
+
+<header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1 class="sitename">Tristan</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">Qui suis-je ?</a></li>
+        <li><a href="resume.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <div class="header-social-links">
+      <a href="https://www.instagram.com/tristanzacc/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/tristan-zaccaro-9200843a1/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <section id="resume" class="resume section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Portfolio</h2>
+      <p>Référentiel de Compétences BUT R&amp;T</p>
+    </div>
+
+    <div class="container">
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-6 competence-block">
+          <a href="BC1.html" class="resume-title-link">
+            <h3>Administrer</h3>
+          </a>
+          <div class="ac-wrapper">
+            <ul class="ac-list">
+              <li><strong>AC11.01</strong> | Maîtriser les lois fondamentales de l’électricité...</li>
+              <li><strong>AC11.02</strong> | Comprendre l'architecture et les fondements...</li>
+              <li><strong>AC11.03</strong> | Configurer les fonctions de base du réseau local</li>
+              <li><strong>AC11.04</strong> | Maîtriser les rôles et les principes fondamentaux...</li>
+              <li><strong>AC11.05</strong> | Identifier les dysfonctionnements du réseau local...</li>
+              <li><strong>AC11.06</strong> | Installer un poste client, expliquer la procédure</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6 competence-block">
+          <a href="BC2.html" class="resume-title-link">
+            <h3>Connecter</h3>
+          </a>
+          <div class="ac-wrapper">
+            <ul class="ac-list">
+              <li><strong>AC12.01</strong> | Mesurer, analyser et commenter les signaux</li>
+              <li><strong>AC12.02</strong> | Caractériser des systèmes de transmissions...</li>
+              <li><strong>AC12.03</strong> | Déployer des supports de transmission</li>
+              <li><strong>AC12.04</strong> | Connecter les systèmes de ToIP</li>
+              <li><strong>AC12.05</strong> | Communiquer avec un tiers et adapter son discours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-center-bottom" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-6 competence-block">
+          <a href="BC3.html" class="resume-title-link">
+            <h3>Programmer</h3>
+          </a>
+          <div class="ac-wrapper">
+            <ul class="ac-list">
+              <li><strong>AC13.01</strong> | Utiliser un système informatique et ses outils</li>
+              <li><strong>AC13.02</strong> | Lire, exécuter, corriger et modifier un programme</li>
+              <li><strong>AC13.03</strong> | Traduire un algorithme dans un langage donné</li>
+              <li><strong>AC13.04</strong> | Connaître l’architecture et les technologies Web</li>
+              <li><strong>AC13.05</strong> | Choisir les mécanismes de gestion de données</li>
+              <li><strong>AC13.06</strong> | S’intégrer dans un environnement collaboratif</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" class="footer light-background">
+  <div class="container text-center">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Tristan Zaccaro</strong> <span>Tous droits réservés</span></p>
+    <div class="social-links d-flex justify-content-center mt-3">
+      <a href="https://www.instagram.com/tristanzacc/"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/tristan-zaccaro-9200843a1/"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div id="preloader"></div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
