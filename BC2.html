@@ -97,7 +97,7 @@
 
     .ac-card:hover { 
       background-color: var(--hover-gray); 
-      max-height: 2000px; 
+      max-height: 3500px; 
       transform: translateY(-5px); 
       box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
     }
@@ -165,6 +165,35 @@
       border-left: 4px solid var(--accent-color); 
       line-height: 1.5; 
     }
+
+    /* --- BLOC COMPTE RENDU TEXTUEL --- */
+    .report-extract {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-left: 4px solid #2c3e50;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+    }
+    .report-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #2c3e50;
+      border-bottom: 2px dashed #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .report-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      color: #555;
+      white-space: pre-line;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
@@ -186,27 +215,72 @@
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>J'ai utilisé des équipements de mesure professionnels pour analyser des signaux analogiques et numériques, en observant leur comportement dans les domaines temporel et fréquentiel.</p>
+              <p>Observation et caractérisation de signaux analogiques et numériques à l'aide d'appareils de mesure physiques lors des séances de laboratoire de télécommunications.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin de comprendre l'impact physique de la modulation d'ondes sur le transport de l'information et d'apprendre à valider la conformité d'un signal.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Manipulation d'un analyseur de spectre pour mesurer la puissance des harmoniques et d'un oscilloscope pour valider la qualité du signal (RS232, MLI).</p>
-              <div class="trace-box">Spectrum Analyzer: Center 2.44 GHz<br>RBW: 100 kHz | VBW: 300 kHz<br>Peak Power: -12.4 dBm</div>
+              <p>Utilisation de générateurs de fonctions (GBF), d'oscilloscopes numériques et d'analyseurs de spectre pour mesurer l'amplitude, la fréquence et la bande passante.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Réduire le bruit de fond parasite sur les voies de mesure de l'oscilloscope pour isoler précisément les harmoniques de rang supérieur.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>L'interprétation d'un spectre fréquentiel et le lien direct entre la bande passante d'un canal physique et le débit d'information maximal transmissible.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_TP_MODULATION_AM.pdf</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Mesure du taux de modulation m sur le signal observé : 
+                  m = (Vmax - Vmin) / (Vmax + Vmin) => (4.80V - 1.20V) / (4.80V + 1.20V) = 3.60 / 6.00 = 0.60 (soit 60%).
+                  L'analyseur de spectre centré sur la porteuse Fp = 100 kHz indique deux raies latérales à Fp - f = 98 kHz et Fp + f = 102 kHz. L'absence de surmodulation (m < 1) garantit une restitution parfaite de l'enveloppe sans distorsion du signal audio intercepté ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC12.02 | Caractériser des systèmes de transmissions élémentaires <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC12.02 | Caractériser des systèmes de transmissions élémentaires et modéliser ses composants <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Calcul et modélisation théorique de liaisons point à point, incluant l'évaluation des pertes et des gains de puissance d'une chaîne de transmission.</p>
+            </div>
+            <div class="question-block">
               <span class="question-title">Pourquoi je l’ai fait</span>
-              <p>Pour prédire la fiabilité d'une liaison sans fil ou filaire et s'assurer que le rapport signal sur bruit (SNR) est suffisant pour le débit souhaité.</p>
+              <p>Afin de concevoir des architectures de transmission viables et d'anticiper la dégradation du signal avant le déploiement matériel d'une liaison hertzienne ou filaire.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Calculs de bilans de liaison en utilisant les échelles logarithmiques (dB, dBm, dBi).</p>
-              <div class="trace-box">Prx = Ptx + Gtx + Grx - Losses<br>Exemple: 20dBm + 3dBi + 3dBi - 110dB = -84dBm (Seuil de sensibilité)</div>
+              <p>Établissement de bilans de puissance complets (formule de Friis) prenant en compte l'atténuation en espace libre, le gain des antennes et les pertes des câbles coaxiaux.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Manipuler correctement les conversions d'unités logarithmiques (dB, dBm, dBi) lors de l'intégration des différents coefficients d'atténuation.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>J'ai appris à dimensionner de manière précise les antennes d'un système sans fil pour obtenir une marge de réception de sécurité face aux évanouissements (fading).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 BILAN_LIAISON_FH.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Modélisation d'une liaison Faisceau Hertzien à 2.4 GHz sur une distance d = 5 km :
+                  Pertes en espace libre : Path Loss (dB) = 32.4 + 20*log10(2400) + 20*log10(5) = 32.4 + 67.6 + 14.0 = 114 dB.
+                  Bilan de puissance global : Prx = Ptx + Gtx + Grx - Pertes = 15 dBm + 18 dBi + 18 dBi - 114 dB = -63 dBm.
+                  Le niveau de signal reçu (-63 dBm) est bien supérieur à la sensibilité du récepteur fixée à -76 dBm, offrant une marge de confort de 13 dB ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -216,12 +290,34 @@
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Soudure de fibre optique, confection de câbles RJ45 (normes T568A/B) et déploiement de bornes Wi-Fi avec étude de couverture.</p>
+              <p>Préparation, raccordement et test d'intégrité de supports physiques en cuivre (câblage réseau) et d'infrastructures de fibre optique.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour maîtriser le déploiement de la couche 1 (physique) du modèle OSI et garantir une infrastructure de transmission dénuée de défauts matériels.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Utilisation d'une soudeuse à arc et d'un réflectomètre (OTDR) pour qualifier la liaison.</p>
-              <div class="trace-box">OTDR Event Table:<br>Event 1: Splice @ 1.2km | Loss: 0.03dB<br>Event 2: Connector @ 2.5km | Reflectance: -45dB</div>
+              <p>Sertissage de connecteurs RJ45 (norme T568B), soudure de brins de fibre optique monomode par fusion et certification des liaisons à l'aide d'un réflectomètre (OTDR).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Réaliser une coupe parfaite de la fibre optique avec la cliveuse pour éviter les impuretés et limiter l'atténuation au point d'épissure.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>La minutie requise par les infrastructures très haut débit et l'interprétation des courbes de réflectométrie pour situer une courbure ou une rupture sur un lien optique.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 RECETTE_OPTIQUE_BAT_A.pdf</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Validation de la soudure optique par fusion n°3. 
+                  L'analyse de l'événement sur l'écran du réflectomètre à 1310 nm montre une perte locale localisée à 142 mètres du point d'injection.
+                  Atténuation de l'épissure mesurée : 0.03 dB. Cette valeur respecte scrupuleusement la limite maximale tolérée par le cahier des charges de l'IUT (0.15 dB), validant la conformité physique de la liaison dorsale (Backbone) ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -231,12 +327,35 @@
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Installation et configuration de serveurs de téléphonie IP. Gestion des comptes utilisateurs et des flux audio.</p>
+              <p>Mise en place d'un autocommutateur IP (IP-PBX) logiciel et enregistrement de terminaux de Téléphonie sur IP pour établir des communications vocales.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin d'appréhender la convergence des réseaux de données et de la voix (VoIP) au sein des infrastructures de télécommunications modernes.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Configuration de serveurs Asterisk et debug des messages SIP avec l'outil sngrep.</p>
-              <div class="trace-box">REGISTER sip:asterisk@172.16.0.10 SIP/2.0<br>WWW-Authenticate: Digest realm="asterisk"<br>Status: 200 OK</div>
+              <p>Configuration de comptes d'utilisateurs et de règles de routage (Dialplan) dans les fichiers d'Asterisk, et observation des messages de signalisation via sngrep.</p>
+              <div class="trace-box">[301](+)<br>type=endpoint<br>auth=auth301<br>aors=301<br>context=rt-salles<br>allow=ulaw,alaw</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Résoudre les problèmes d'interconnexion liés au blocage des ports par les pare-feux et comprendre la négociation des codecs audio.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>Le fonctionnement complet du protocole SIP (session) et du protocole RTP (transport de la voix en temps réel) indispensables aux infrastructures télécoms.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_TP_ASTERISK_VOIP.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Capture réseau d'un appel via l'utilitaire sngrep :
+                  L'analyse de la session SIP montre l'envoi de la méthode INVITE du poste 301, suivie d'un code statut SIP/2.0 180 Ringing.
+                  Au moment du décroché (SIP/2.0 200 OK), le flux média audio s'établit de manière dynamique sur le port UDP 16422 via des paquets encapsulés en RTP utilisant le codec G.711 PCMA (64 kbps), assurant une clarté de voix nominale ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -245,12 +364,34 @@
           <h4>AC12.05 | Communiquer avec un tiers et adapter son discours <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
-              <span class="question-title">Ce que j’en ai appris</span>
-              <p>L'importance de savoir vulgariser une solution complexe pour un décideur tout en restant extrêmement précis techniquement face à un expert.</p>
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Soutenance orale de projets techniques et rédaction de documentations adaptées pour des utilisateurs finaux et des décideurs.</p>
             </div>
             <div class="question-block">
-              <span class="question-title">Ce que je ferais autrement</span>
-              <p>Pratiquer davantage la rédaction de fiches de synthèse "décideur" pour accélérer la validation des projets.</p>
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour être capable de faire l'interface entre la complexité de l'ingénierie réseaux/télécoms et les besoins concrets d'une clientèle ou d'une direction d'entreprise.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Production de schémas fonctionnels simplifiés, suppression du jargon cryptique lors des explications et rédaction de fiches de procédures vulgarisées.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Trouver les bons termes pour expliquer des concepts hautement abstraits (comme le routage dynamique ou l'encapsulation) à une personne non technique.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>La communication claire est aussi importante que la rigueur technique pour mener à bien le déploiement et l'acceptation d'un projet informatique.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 RAPPORT_SYNTHESE_SAE.pdf</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Phase de restitution finale devant le jury : 
+                  La présentation technique a été scindée en deux axes. Un schéma de câblage détaillé destiné aux équipes de techniciens d'exploitation réseau, et un graphique de retour sur investissement axé sur la centralisation des flux télécoms (ToIP), justifiant une réduction prévisionnelle de 22% sur les coûts d'abonnements externes ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>

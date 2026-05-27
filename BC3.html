@@ -97,7 +97,7 @@
 
     .ac-card:hover { 
       background-color: var(--hover-gray); 
-      max-height: 2000px; 
+      max-height: 2500px; 
       transform: translateY(-5px); 
       box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
     }
@@ -165,6 +165,35 @@
       border-left: 4px solid var(--accent-color); 
       line-height: 1.5; 
     }
+
+    /* --- BLOC COMPTE RENDU TEXTUEL --- */
+    .report-extract {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-left: 4px solid #2c3e50;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+    }
+    .report-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #2c3e50;
+      border-bottom: 2px dashed #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .report-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      color: #555;
+      white-space: pre-line;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
@@ -175,97 +204,202 @@
     </a>
     
     <div class="bc-header-container" data-aos="fade-up">
-      <h1>Programmer les services</h1>
+      <h1>Développer des applications Internet</h1>
     </div>
 
     <div class="row justify-content-center">
       <div class="col-lg-11">
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC13.01 | Utiliser un système informatique et ses outils <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC13.01 | Utiliser un environnement de développement web <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Apprentissage intensif du terminal Linux et de la gestion de fichiers en ligne de commande. Utilisation d'éditeurs de texte avancés (VS Code, Vim).</p>
+              <p>Mise en place d'espaces de travail locaux structurés et utilisation d'outils de gestion de version pour coder des projets web de manière organisée.</p>
             </div>
-            <div class="question-block">
-              <span class="question-title">Comment je l’ai fait</span>
-              <p>Automatisation de tâches répétitives via des scripts Shell et gestion des droits utilisateurs.</p>
-              <div class="trace-box">$ grep "ERROR" /var/log/syslog | tail -n 5<br>$ chmod +x myscript.sh<br>$ ./myscript.sh --auto</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ac-card" data-aos="fade-up">
-          <h4>AC13.02 | Lire, exécuter et modifier un programme <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
-          <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Pourquoi je l’ai fait</span>
-              <p>Savoir déboguer du code écrit par un tiers est crucial pour maintenir des scripts d'administration réseau ou des outils de monitoring.</p>
+              <p>Afin d'assurer le suivi des modifications du code source, d'éviter les pertes de données et de collaborer efficacement sur des fichiers d'application commune.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Analyse de scripts Python pour corriger des erreurs de syntaxe ou de logique.</p>
-              <div class="trace-box">def connect_test(ip):<br>&nbsp;&nbsp;&nbsp;&nbsp;try:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ping(ip)<br>&nbsp;&nbsp;&nbsp;&nbsp;except Exception as e:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Erreur: {e}")</div>
+              <p>Utilisation de l'éditeur Visual Studio Code couplé aux terminaux Git pour initialiser, valider (commit) et pousser (push) des dépôts de code sur un serveur distant.</p>
+              <div class="trace-box">$ git init<br>$ git add index.html style.css<br>$ git commit -m "Initialisation de l'interface et du style du portfolio"<br>$ git push origin main</div>
             </div>
-          </div>
-        </div>
-
-        <div class="ac-card" data-aos="fade-up">
-          <h4>AC13.03 | Traduire un algorithme dans un langage <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
-          <div class="ac-content">
             <div class="question-block">
-              <span class="question-title">Ce que j’ai fait</span>
-              <p>Conception de solutions algorithmiques pour résoudre des problèmes de tri ou de recherche, puis implémentation en langage Python.</p>
+              <span class="question-title">Mes difficultés</span>
+              <p>Résoudre les conflits de fusion (merge conflicts) lors de modifications simultanées sur les mêmes lignes d'un fichier de style CSS.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Ce que j’en ai appris</span>
-              <p>La structuration de la pensée est plus importante que la syntaxe pure. Un bon algorithme est la base d'un programme performant.</p>
+              <p>J'ai assimilé la routine des workflows Git et compris l'importance absolue de commenter chaque commit pour maintenir un historique de projet transparent.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_TP_ENVIRONNEMENT_GIT.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Validation de l'arbre Git local après correction du conflit d'indexation :
+                  La commande 'git status' affiche : "Your branch is up to date with 'origin/main'. Nothing to commit, working tree clean".
+                  Le fichier .gitignore a été correctement configuré à la racine du projet pour exclure le dossier /node_modules/ et éviter la surcharge du dépôt distant de notation ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC13.04 | Architecture et technologies Web <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC13.02 | Modéliser les données de l’application web <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Développement de pages Web dynamiques utilisant HTML, CSS et des interactions côté serveur pour gérer des interfaces d'administration.</p>
+              <p>Conception logique de l'organisation des données et modélisation de bases de données relationnelles pour stocker des informations de sites dynamiques.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour garantir la cohérence des bases de données de l'application, éliminer la redondance des informations et optimiser le temps d'exécution des futures requêtes.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Mise en place d'un serveur local pour tester les formulaires et le rendu responsive.</p>
-              <div class="trace-box">&lt;nav class="navbar"&gt;<br>&nbsp;&nbsp;&lt;a href="#"&gt;Accueil&lt;/a&gt;<br>&nbsp;&nbsp;&lt;button class="btn-green"&gt;Connexion&lt;/button&gt;<br>&lt;/nav&gt;</div>
+              <p>Création de dictionnaires de données, élaboration de modèles conceptuels (MCD) basés sur les dépendances fonctionnelles, puis transcription en requêtes SQL d'insertion.</p>
+              <div class="trace-box">CREATE TABLE Competences (<br>&nbsp;&nbsp;id_comp INT AUTO_INCREMENT PRIMARY KEY,<br>&nbsp;&nbsp;code_ac VARCHAR(10),<br>&nbsp;&nbsp;titre_ac VARCHAR(255)<br>);</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Déterminer de manière exacte les cardinalités complexes de type (0,N) ou (1,N) lors de la création de tables d'associations intermédiaires.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>L'importance d'une analyse conceptuelle poussée en amont, qui évite de devoir restructurer une base de données en pleine phase de production applicative.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 MODELISATION_SQL_BIBLIO.pdf</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Application des règles de passage du MCD au Modèle Relationnel (MRD) : 
+                  L'association "Posséder" génère une table d'association nommée 'liens_ac' comportant deux clés étrangères : FOREIGN KEY (id_bc) REFERENCES Bloc(id_bc) et FOREIGN KEY (id_comp) REFERENCES Competences(id_comp).
+                  L'intégrité référentielle est assurée par l'option ON DELETE CASCADE ajoutée sur les clés contraintes ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC13.05 | Gestion des données <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC13.03 | Développer une application avec un langage de script <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Conception et manipulation de bases de données relationnelles pour stocker des inventaires réseaux ou des logs d'utilisateurs.</p>
+              <p>Écriture de scripts serveurs et de programmes dynamiques pour traiter les données reçues, manipuler des fichiers et automatiser des actions logiques.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin de rendre les pages web interactives, de communiquer avec la base de données relationnelle et de générer du contenu personnalisé pour l'utilisateur.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Rédaction de requêtes SQL pour extraire des informations précises (SELECT, JOIN, WHERE).</p>
-              <div class="trace-box">SELECT hostname, ip FROM switchs<br>WHERE model = 'Cisco' AND vlan_id = 10;</div>
+              <p>Utilisation du langage PHP pour récupérer les paramètres de formulaires ($_POST) et construction de requêtes préparées PDO sécurisées contre les failles.</p>
+              <div class="trace-box">$query = $pdo->prepare('SELECT * FROM Competences WHERE code_ac = :code');<br>$query->execute(['code' => $code_recherche]);<br>$resultat = $query->fetchAll();</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Gérer la persistance des variables d'affichage à l'aide des sessions de connexion ($_SESSION) sans créer de failles d'élévation de droits.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>J'ai compris l'importance critique de filtrer et de nettoyer systématiquement les saisies des internautes pour éviter les injections SQL destructrices.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_TP_PHP_DYNAMIQUE.php</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Test de boucle d'affichage dynamique des cartes compétences :
+                  foreach ($resultat as $row) {
+                      echo "&lt;div class='ac-card'&gt;&lt;h4&gt;" . htmlspecialchars($row['titre_ac']) . "&lt;/h4&gt;&lt;/div&gt;";
+                  }
+                  L'utilisation de la fonction htmlspecialchars() neutralise l'exécution intempestive de balises injectées (protection XSS) lors de la réévaluation de l'interface par le navigateur client ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC13.06 | Travail collaboratif (Git) <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC13.04 | Réaliser une interface utilisateur web <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Utilisation de Git pour gérer l'historique de mes projets et travailler en équipe sans écraser le travail de mes collaborateurs.</p>
+              <p>Création d'interfaces web ergonomiques, esthétiques et s'adaptant parfaitement à la taille des différents types d'écrans du marché.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour proposer une expérience de navigation fluide, agréable et intuitive, mettant au mieux en valeur le contenu technique présenté.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Gestion des branches, des commits et résolution de conflits lors des fusions (merges).</p>
-              <div class="trace-box">$ git add .<br>$ git commit -m "Ajout du bouton animé"<br>$ git push origin main</div>
+              <p>Écriture de code HTML5 sémantique, structuration des styles à l'aide des grilles CSS (Flexbox, Grid) et utilisation des frameworks CSS (Bootstrap) via les Media Queries.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Ajuster les propriétés d'alignement complexes et les débordements (overflow) de texte dans les animations d'accordéons ou de menus imbriqués.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>L'importance d'une conception pensée d'abord pour le mobile (Mobile-First) afin de faciliter la maintenance esthétique et le confort visuel global.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 MAQUETTAGE_INTEGRATION_CSS.css</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Implémentation du comportement d'adaptation Responsive de l'interface utilisateur :
+                  @media (max-width: 768px) {
+                      .ac-card { max-height: 100px; padding: 15px; }
+                      .bc-header-container h1 { font-size: 1.8rem; }
+                  }
+                  L'intégration de la transition cubique "transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1)" produit un déploiement fluide des volets d'accordéons sans provoquer de saccades d'affichage ... »
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-card" data-aos="fade-up">
+          <h4>AC13.05 | Traiter les données de l’application web <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <div class="ac-content">
+            <div class="question-block">
+              <span class="question-title">Ce que j’ai fait</span>
+              <p>Manipulation, filtrage et validation des flux de données transitant entre les formulaires utilisateurs et l'application serveur.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin de s'assurer de l'exactitude des types de données enregistrées (dates, adresses IP, emails) et d'éviter les anomalies de stockage.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Mise en place d'expressions régulières (Regex) en langage de programmation et utilisation de fonctions natives de validation logique des chaînes.</p>
+              <div class="trace-box">if (filter_var($email_user, FILTER_VALIDATE_EMAIL)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;// Traitement logique de la donnée propre<br>}</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Construire des motifs d'expressions régulières complexes sans rejeter par erreur des formats de saisie utilisateur pourtant valides.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>Qu'un traitement rigoureux des données à la source allège considérablement la charge de nettoyage applicatif sur les systèmes de stockage finaux.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_TP_TRAITEMENT_DONNEES.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Analyse de la conformité de l'adresse IP saisie dans le panneau de gestion réseau :
+                  $regex_ip = '/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';
+                  L'intégration de ce masque de validation conditionnel intercepte les saisies erronées (ex: 256.100.0.1) en retournant immédiatement un code d'erreur HTTP 400 Bad Request au script client ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>

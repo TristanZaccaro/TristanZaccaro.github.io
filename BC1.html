@@ -97,7 +97,7 @@
 
     .ac-card:hover { 
       background-color: var(--hover-gray); 
-      max-height: 2000px; /* S'ouvre au survol */
+      max-height: 3500px; 
       transform: translateY(-5px); 
       box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
     }
@@ -154,17 +154,45 @@
       margin-bottom: 0;
     }
     
-    /* BLOC DE CODE / TRACE */
     .trace-box { 
       background: #1e1e1e; 
       color: #f8f8f2; 
       padding: 20px; 
       border-radius: 8px; 
-      font-family: 'Consolas', 'Monaco', monospace; 
+      font-family: 'Consolas', monospace; 
       font-size: 0.95rem; 
       margin: 15px 0; 
       border-left: 4px solid var(--accent-color); 
       line-height: 1.5; 
+    }
+
+    /* --- BLOC COMPTE RENDU TEXTUEL --- */
+    .report-extract {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-left: 4px solid #2c3e50;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+    }
+    .report-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #2c3e50;
+      border-bottom: 2px dashed #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .report-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      color: #555;
+      white-space: pre-line;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -176,7 +204,7 @@
     </a>
     
     <div class="bc-header-container" data-aos="fade-up">
-      <h1>Administrer les systèmes</h1>
+      <h1>Administrer les systèmes et les réseaux</h1>
     </div>
 
     <div class="row justify-content-center">
@@ -187,32 +215,72 @@
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Réalisation de manipulations en laboratoire sur des circuits en courant continu (CC) et alternatif (CA). Mesure de tension, intensité et résistance sur montages série et parallèle.</p>
+              <p>Mesure de tension, d'intensité et de résistance sur des montages électriques en courant continu et alternatif en laboratoire de physique à l'IUT.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Pourquoi je l’ai fait</span>
-              <p>Indispensable pour comprendre la distribution d'énergie, calculer la consommation d'une baie de brassage et choisir les onduleurs adaptés.</p>
+              <p>Pour assimiler les principes énergétiques sous-jacents aux équipements de télécommunications et comprendre l'alimentation des infrastructures informatiques.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Utilisation de multimètres et oscilloscopes pour vérifier les lois de Kirchhoff et analyser le rendement énergétique.</p>
+              <p>Utilisation de multimètres, d'oscilloscopes et application directe des lois d'Ohm et de Kirchhoff pour analyser les circuits.</p>
             </div>
-            <div class="question-block"><span class="question-title">Mes difficultés</span><p>Comprendre le déphasage dans les circuits inductifs.</p></div>
-            <div class="question-block"><span class="question-title">Ce que j’en ai appris</span><p>L'importance du dimensionnement des câbles pour la sécurité (effet Joule).</p></div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>La manipulation des signaux alternatifs à l'oscilloscope et le calcul précis du déphasage induit par les composants inductifs.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>J'ai appris à interpréter les caractéristiques électriques des fiches techniques du matériel réseau et à évaluer les besoins en puissance d'une infrastructure.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_TP1_ELECTRICITE.pdf</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Vérification expérimentale de la loi des mailles (Maille ABDC) : 
+                  E - UR1 - UR2 = 0  =>  12.04V - 4.52V - 7.52V = 0.00V.
+                  Mesure de la puissance active dissipée par effet Joule : P = R * I² = 220 * (0.054)² = 0.641 W. 
+                  L'écart constaté avec la valeur théorique (0.650 W) est de seulement 1.38%, ce qui valide la précision de nos instruments d'évaluation ... »
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC11.02 | Architecture des systèmes numériques <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC11.02 | Architecture et fondements des systèmes numériques <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Étude du codage de l'information (binaire, hexadécimal) et analyse de l'encapsulation des données via le modèle OSI.</p>
+              <p>Étude des systèmes de numération (binaire, hexadécimal) et décodage de l'encapsulation des données à travers les couches du modèle OSI.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin de comprendre la structure interne d'un paquet de données circulant sur un support physique et de maîtriser la logique des masques de réseau.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Analyse de captures de trames avec Wireshark pour visualiser l'empilement des protocoles.</p>
-              <div class="trace-box">Frame 1: 74 bytes on wire (592 bits)<br>Ethernet II, Src: Apple_f2:31, Dst: Cisco_a1:04<br>Internet Protocol Version 4, Src: 192.168.1.10</div>
+              <p>Conversion d'adresses, calculs de masques et analyse de trames réseau capturées lors des séances de manipulation.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Visualiser l'articulation logique et le désencapsulage des données complexes lors du passage de la couche liaison à la couche réseau.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>La capacité à manipuler aisément les conversions binaires et à comprendre l'importance critique de chaque champ d'un en-tête de protocole informatique.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_OSI_NUMERATION.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Analyse de l'en-tête IP de la trame n°42 :
+                  Adresse IP Source lue en Hexadécimal : 0xC0A80A0F -> Convertie en décimal pointé : 192.168.10.15.
+                  Le champ IHL (Internet Header Length) est égal à 5, ce qui donne une taille d'en-tête de 20 octets (5 * 4). Aucun champ d'option n'est présent dans ce paquet, confirmant un échange de couche 3 standard ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -222,27 +290,71 @@
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Configuration de commutateurs Cisco : création de VLANs, sécurisation des ports et mise en place de trunks 802.1Q.</p>
+              <p>Configuration initiale d'équipements réseaux (commutateurs et routeurs) pour interconnecter des machines au sein d'un LAN.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour acquérir les compétences indispensables au déploiement d'une infrastructure informatique d'entreprise segmentée et sécurisée.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Ligne de commande (CLI) via port console.</p>
-              <div class="trace-box">Switch(config)# vlan 10<br>Switch(config-vlan)# name DATA_VLAN<br>Switch(config)# interface range fa0/1-5<br>Switch(config-if-range)# switchport access vlan 10</div>
+              <p>Création et affectation de VLANs, configuration d'interfaces et mise en place de liaisons Trunk (802.1Q) en ligne de commande Cisco IOS, ainsi que la mise en place du routage inter-VLAN.</p>
+              <div class="trace-box">Switch# configure terminal<br>Switch(config)# vlan 10<br>Switch(config-vlan)# name Administration<br>Switch(config)# interface fastEthernet 0/1<br>Switch(config-if)# switchport mode access<br>Switch(config-if)# switchport access vlan 10</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Éviter les erreurs de syntaxe Cisco IOS et configurer de manière exacte les sous-interfaces du routeur nécessaires au routage inter-VLAN (Router-on-a-stick).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>J'ai compris comment structurer de manière logique et cloisonner les différents services d'une organisation au niveau d'un réseau local commuté.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CONFIG_LAN_CISCO.docx</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... L'isolation entre le VLAN 10 (Admin) et le VLAN 20 (Étudiants) is testée après configuration. 
+                  Depuis PC_Admin (10.10.10.2), le ping vers PC_Etudiant (10.10.20.5) échoue (Request timed out), tandis que le ping vers la passerelle du routeur (10.10.10.1) présente un temps de réponse de <1ms. La table d'adressage MAC du commutateur associe correctement le port Fa0/1 à l'adresse physique 0060.2F4A.3B12 ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC11.04 | Maîtriser les principes fondamentaux des OS <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC11.04 | Maîtriser les rôles et principes fondamentaux des OS <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Installation et administration de serveurs Linux (Debian) et Windows Server. Gestion des droits et des permissions.</p>
+              <p>Gestion des utilisateurs, des processus et sécurisation des fichiers sous environnement Linux (Debian) et Windows Server.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin d'administrer efficacement un serveur hébergeant des services réseaux et de garantir l'intégrité des systèmes de fichiers d'une entreprise.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Manipulation des fichiers de configuration et gestion des utilisateurs en Bash.</p>
-              <div class="trace-box"># useradd -m -G sudo tristan<br># chmod 750 /home/tristan<br># ls -l /etc/shadow</div>
+              <p>Utilisation des commandes système pour attribuer des droits d'accès (propriétaires, groupes) et manipuler l'arborescence.</p>
+              <div class="trace-box">chmod 750 /var/www/html/secure_data<br>chown root:admin_group /var/www/html/secure_data<br>ls -l /var/www/html</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Assimiler le calcul en notation octale pour l'attribution des droits fins et comprendre le comportement des permissions par défaut (umask).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>J'ai appris à maîtriser la gestion fine de la sécurité logique locale au sein d'un système d'exploitation de type Unix.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 CR_PRINCIPES_OS.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Afin de vérifier l'étanchéité des privilèges, la tentative d'écriture de l'utilisateur 'tristan_guest' dans le dossier sécurisé retourne l'erreur explicite : "Permission denied". 
+                  L'application du masque umask 027 garantit que tout nouveau fichier créé par le serveur n'offrira aucun droit de lecture ni d'écriture aux autres utilisateurs du système informatique ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -252,26 +364,73 @@
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Dépannage de pannes réseau sur maquettes physiques. Diagnostic par étapes (Modèle OSI).</p>
+              <p>Diagnostic et résolution de pannes réseaux courantes (problèmes de câblage, mauvaise configuration d'IP, pannes de services).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Afin de développer les compétences de support informatique requises pour minimiser l'impact d'un incident de production réseau.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Comment je l’ai fait</span>
-              <p>Utilisation d'outils comme Ping, Traceroute et Nslookup pour isoler le point de rupture.</p>
-              <div class="trace-box">C:\> ping 8.8.8.8 -t<br>Délai d'attente de la demande dépassé.<br>C:\> ipconfig /all</div>
+              <p>Utilisation d'outils de test (ping, traceroute, wireshark) pour localiser précisément l'origine du défaut selon une méthode logique.</p>
+              <div class="trace-box">ping 192.168.1.254<br>traceroute 8.8.8.8<br>nslookup my-server.local</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Savoir trier et isoler le bon paquet réseau au milieu d'un volume massif de captures Wireshark lors d'une simulation d'incident.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Ce que j’en ai appris</span>
+              <p>J'ai développé une rigueur d'analyse basée sur la remontée méthodique des couches du modèle OSI (du physique vers l'applicatif).</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 GLPI_INCIDENT_LAB.txt</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Constat de la panne : La machine cliente ne reçoit plus de configuration réseau automatique. 
+                  L'activation du logiciel Wireshark montre des requêtes "DHCP Discover" répétées en boucle sans aucune réponse "DHCP Offer".
+                  Le dysfonctionnement provenait du serveur DHCP de test dont le pool d'adresses dynamiques disponibles (Scope) était totalement saturé par des baux expirés non relâchés ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="ac-card" data-aos="fade-up">
-          <h4>AC11.06 | Installer un poste client et expliquer la procédure <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
+          <h4>AC11.06 | Installer un poste client, expliquer la procédure <i class="bi bi-plus-circle-fill toggle-icon"></i></h4>
           <div class="ac-content">
             <div class="question-block">
               <span class="question-title">Ce que j’ai fait</span>
-              <p>Préparation de masters, installation d'OS et rédaction de documentations techniques pour les utilisateurs finaux.</p>
+              <p>Déploiement d'un système d'exploitation complet sur une machine vierge et intégration fonctionnelle au réseau de l'infrastructure.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Pourquoi je l’ai fait</span>
+              <p>Pour savoir préparer un poste utilisateur opérationnel respectant la politique de configuration et de sécurité globale d'un parc de machines.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Comment je l’ai fait</span>
+              <p>Installation pas à pas de l'OS, configuration des paramètres IP et jonction de la machine à un domaine Active Directory pour valider la procédure.</p>
+              <div class="trace-box">netdom join NOM_MACHINE /domain:DOMAINE /userd:ADMIN /passwordd:MOT_DE_PASSE</div>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Mes difficultés</span>
+              <p>Résoudre les conflits d'adressage DNS initiaux qui empêchaient la résolution de nom du contrôleur de domaine lors de la jonction Active Directory.</p>
             </div>
             <div class="question-block">
               <span class="question-title">Ce que j’en ai appris</span>
-              <p>La standardisation du parc informatique facilite grandement la maintenance et réduit les tickets de support.</p>
+              <p>L'importance d'une documentation claire et d'une procédure standardisée pour assurer la reproductibilité des installations.</p>
+            </div>
+            <div class="question-block">
+              <span class="question-title">Extrait du compte rendu</span>
+              <div class="report-extract">
+                <div class="report-title"><span>📄 DOCUMENTATION_POSTE_CLIENT.pdf</span> <span>IUT Béthune</span></div>
+                <div class="report-text">
+                  « ... Étape de jonction au domaine de test : 
+                  Après exécution de la commande d'intégration réseau, la machine a redémarré avec succès. 
+                  La saisie de la commande 'gpresult /r' dans l'invite de commande de l'administrateur confirme que l'unité organisationnelle "Salles-TP" applique correctement les stratégies de groupe (GPO) réseau, notamment le montage automatique du lecteur partagé Z:\ ... »
+                </div>
+              </div>
             </div>
           </div>
         </div>
